@@ -33,8 +33,8 @@ Ext.application({
              };
 
         var periodicFunction = window.setInterval(renewData,1000);
-        var MyApp = Ext.create('voting-charts.view.Main');
-        Ext.Viewport.add(MyApp);
+        var app = Ext.create('voting-charts.view.Main');
+        Ext.Viewport.add(app);
 
         settlerRelativeCoordinates = {
           setValue: function(x,y){
