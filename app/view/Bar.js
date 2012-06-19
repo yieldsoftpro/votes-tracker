@@ -1,4 +1,5 @@
 Ext.define('voting-charts.view.Bar', {
+    id:'barChart',
     extend:'Ext.chart.Chart',
     xtype:'bar',
     config:{
@@ -24,7 +25,7 @@ Ext.define('voting-charts.view.Bar', {
                 grid:{
                 },
                 minimum:0,
-                maximum:5000,
+                maximum:500,
                 majorTickSteps:10,
                 label:{
                     rotate:{

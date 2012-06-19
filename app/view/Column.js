@@ -1,4 +1,5 @@
 Ext.define('voting-charts.view.Column', {
+    id:'columnChart',
     extend:'Ext.chart.Chart',
     xtype:'column',
     config:{
@@ -15,7 +16,7 @@ Ext.define('voting-charts.view.Column', {
                 title:'Data',
                 fields:'data',
                 minimum:0,
-                maximum:5000,
+                maximum:500,
                 majorTickSteps:10
             },
 

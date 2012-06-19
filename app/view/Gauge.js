@@ -1,4 +1,5 @@
 Ext.define('voting-charts.view.Gauge', {
+    id:'gaugeChart',
     extend:'Ext.chart.Chart',
     xtype:'gauge',
     config:{
@@ -13,7 +14,7 @@ Ext.define('voting-charts.view.Gauge', {
                 type:'gauge',
                 position:'gauge',
                 minimum:0,
-                maximum:5000,
+                maximum:500,
                 steps:10,
                 margin:10
             }

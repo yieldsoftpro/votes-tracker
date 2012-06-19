@@ -20,11 +20,22 @@ Ext.application({
             model:'dataModel',
             proxy:{
                 type:'ajax',
-                url:'http://192.168.1.4/votescount.php'
+                //url:'http://192.168.1.4/votescount.php'
+                url:'http://localhost:8080/dummy.json'
             },
             autoLoad:true
-        })
+        });
+
+
+        window.maxValue = 500;
+        window.refreshMaxValue = function (currentValue) {
+            if (currentValue >= maxValue || currentValue > (maxValue - 20)) {
+                window.maxValue = 500 * Math.ceil(currentValue/500);
+            }
+        }
+
     },
+
 
     launch:function () {
 
@@ -32,6 +43,15 @@ Ext.application({
             window.dataStore.load({
                 params:{trackingId:Ext.getCmp("trackingIdField").getValue()}
             });
+
+            window.refreshMaxValue(window.dataStore.data.items[0].data.data);
+            Ext.getCmp("gaugeChart")._axes.items[0]._maximum = window.maxValue;
+            Ext.getCmp("columnChart")._axes.items[0]._maximum = window.maxValue;
+            Ext.getCmp("barChart")._axes.items[1]._maximum = window.maxValue;
+
+            Ext.getCmp("gaugeChart").redraw();
+            Ext.getCmp("columnChart").redraw();
+            Ext.getCmp("barChart").redraw();
         }
 
         var periodicFunction = window.setInterval(renewData, 1000);

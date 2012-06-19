@@ -19,7 +19,9 @@ Ext.define('voting-charts.controller.Application', {
     },
 
     onEnterTap: function() {
-        this.getMain().setActiveItem(1);
+        if (Ext.getCmp("trackingIdField").getValue()) {
+            this.getMain().setActiveItem(1);
+        }
     },
 
     onBackTap: function() {
