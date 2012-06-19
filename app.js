@@ -20,7 +20,7 @@ Ext.application({
             model:'dataModel',
             proxy:{
                 type:'ajax',
-                url:'http://localhost:8080/JsonServlet?q=5'
+                url:'http://192.168.1.4/votescount.php'
             },
             autoLoad:true
         })
@@ -29,7 +29,9 @@ Ext.application({
     launch:function () {
 
         function renewData() {
-            window.dataStore.load();
+            window.dataStore.load({
+                params:{trackingId:Ext.getCmp("trackingIdField").getValue()}
+            });
         }
 
         var periodicFunction = window.setInterval(renewData, 1000);

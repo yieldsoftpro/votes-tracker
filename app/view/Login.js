@@ -1,35 +1,36 @@
 Ext.define('voting-charts.view.Login', {
-    extend: 'Ext.form.Panel',
-    xtype: 'login',
+    extend:'Ext.form.Panel',
+    xtype:'login',
 
-      requires: [
-            'Ext.form.*',
-            'Ext.field.*',
-            'Ext.Button',
-        ],
+    requires:[
+        'Ext.form.*',
+        'Ext.field.*',
+        'Ext.Button',
+    ],
 
-    config: {
-     layout: {
-            type: 'vbox',
-            align: 'center',
-            pack: 'center'
-      },
-        items: [
+    config:{
+        layout:{
+            type:'vbox',
+            align:'center',
+            pack:'center'
+        },
+        items:[
             {
-                xtype: 'fieldset',
-                items: [
+                xtype:'fieldset',
+                items:[
                     {
-                        xtype: 'textfield',
-                        name : 'name',
+                        xtype:'textfield',
+                        id:'trackingIdField',
+                        name:'trackingIdField',
                     },
                 ]
             },
             {
-                    xtype: 'button',
-                    id: 'enterButton',
-                    text: 'Enter',
-                    ui: 'action',
+                xtype:'button',
+                id:'enterButton',
+                text:'Enter',
+                ui:'action',
             }
-     ]
-     }
+        ]
+    }
 });
