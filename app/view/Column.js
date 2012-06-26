@@ -3,7 +3,7 @@ Ext.define('voting-charts.view.Column', {
     extend:'Ext.chart.Chart',
     xtype:'column',
     config:{
-        insetPadding:20,
+        insetPadding:0,
         animate:{
             easing:'elasticIn',
             duration:100
@@ -13,33 +13,21 @@ Ext.define('voting-charts.view.Column', {
             {
                 type:'Numeric',
                 position:'left',
-                title:'Data',
                 fields:'data',
                 minimum:0,
-                maximum:500,
-                majorTickSteps:10
+                maximum:1000,
             },
-
-
-            {
-                type:'Category',
-                position:'bottom',
-                title:'The value',
-                fields:['errorMsg']
-            }
-
 
         ],
         series:[
             {
                 type:'column',
                 axis:'left',
-                xField:'errorMsg',
                 yField:'data',
                 renderer:function (sprite, record, attr, index, store) {
                     return Ext.apply(attr, {
-                        width:settlerRelativeCoordinates.setValue(0, 7),
-                        x:settlerRelativeCoordinates.setValue(0, 40)
+                        width:settlerRelativeCoordinates.setValue(0, 4),
+                        x:settlerRelativeCoordinates.setValue(0, 44),
                     });
                 }
             }

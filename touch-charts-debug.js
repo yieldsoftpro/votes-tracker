@@ -7178,7 +7178,7 @@ Ext.define('Ext.chart.theme.Base', {
         "style": {
             "padding": 10,
             "colors": [
-                "#115fa6",
+                "#008000",
                 "#94ae0a",
                 "#a61120",
                 "#ff8809",
@@ -7198,8 +7198,8 @@ Ext.define('Ext.chart.theme.Base', {
     {
         "selector": "chart axis",
         "style": {
-            "color": "#354f6e",
-            "fill": "#354f6e",
+            "color": "#FFF",
+            "fill": "#FFF",
             "stroke": "#cccccc",
             "stroke-width": 1
         },
@@ -7213,7 +7213,7 @@ Ext.define('Ext.chart.theme.Base', {
         "selector": "chart axis label",
         "style": {
             "color": "#354f6e",
-            "fill": "#354f6e",
+            "fill": "#FFF",
             "font": "12px \"Helvetica\", \"Arial\", \"sans-serif\"",
             "font-weight": "bold",
             "spacing": 2,

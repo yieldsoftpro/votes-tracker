@@ -4,10 +4,6 @@ Ext.define('voting-charts.view.Gauge', {
     xtype:'gauge',
     config:{
         insetPadding:30,
-        animate:{
-            easing:'elasticIn'
-            //duration: 1000
-        },
         store:window.dataStore,
         axes:[
             {
@@ -24,7 +20,7 @@ Ext.define('voting-charts.view.Gauge', {
                 type:'gauge',
                 field:'data',
                 donut:false,
-                colorSet:['#F49D10', '#ddd']
+                colorSet:['#008000', '#fff']
             }
         ]
     }

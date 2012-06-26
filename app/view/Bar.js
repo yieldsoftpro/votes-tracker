@@ -5,48 +5,31 @@ Ext.define('voting-charts.view.Bar', {
     config:{
         animate:{
             easing:'elasticIn',
-            duration:100
+            duration:10
         },
         store:window.dataStore,
-        insetPadding:20,
+        insetPadding:10,
         axes:[
-            {
-                type:'Category',
-                position:'left',
-                fields:['errorMsg'],
-                title:'Some Data',
-                grid:true
-            },
             {
                 type:'Numeric',
                 position:'bottom',
-                title:'Data',
                 fields:'data',
-                grid:{
-                },
+                title:'',
                 minimum:0,
-                maximum:500,
-                majorTickSteps:10,
-                label:{
-                    rotate:{
-                        degrees:315
-                    }
-                }
+                maximum:1000,
             }
-
         ],
 
         series:[
             {
                 type:'bar',
                 axis:'bottom',
-                xField:'errorMsg',
                 yField:'data',
-                yPadding:0,
+                yPadding:100,
                 renderer:function (sprite, record, attr, index, store) {
                     return Ext.apply(attr, {
-                        height:settlerRelativeCoordinates.setValue(7, 0),
-                        y:settlerRelativeCoordinates.setValue(40, 0)
+                        height:settlerRelativeCoordinates.setValue(4, 0),
+                        y:settlerRelativeCoordinates.setValue(40,0)
                     });
                 }
             }

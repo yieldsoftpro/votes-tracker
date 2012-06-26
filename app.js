@@ -13,6 +13,10 @@ Ext.application({
             fields:[
                 {name:'errorMsg', type:'string'},
                 {name:'data', type:'int'}
+            ],
+            validations:[
+                //{type: 'presence',  field: 'errorMsg'},
+                {type: 'presence',  field: 'data'}
             ]
         });
 
@@ -27,10 +31,10 @@ Ext.application({
         });
 
 
-        window.maxValue = 500;
+        window.maxValue = 1000;
         window.refreshMaxValue = function (currentValue) {
             if (currentValue >= maxValue || currentValue > (maxValue - 20)) {
-                window.maxValue = 500 * Math.ceil(currentValue/500);
+                window.maxValue = Math.round(1000 * Math.ceil(currentValue/1000));
             }
         }
 
@@ -39,22 +43,6 @@ Ext.application({
 
     launch:function () {
 
-        function renewData() {
-            window.dataStore.load({
-                params:{trackingId:Ext.getCmp("trackingIdField").getValue()}
-            });
-
-            window.refreshMaxValue(window.dataStore.data.items[0].data.data);
-            Ext.getCmp("gaugeChart")._axes.items[0]._maximum = window.maxValue;
-            Ext.getCmp("columnChart")._axes.items[0]._maximum = window.maxValue;
-            Ext.getCmp("barChart")._axes.items[1]._maximum = window.maxValue;
-
-            Ext.getCmp("gaugeChart").redraw();
-            Ext.getCmp("columnChart").redraw();
-            Ext.getCmp("barChart").redraw();
-        }
-
-        var periodicFunction = window.setInterval(renewData, 1000);
         var app = Ext.create('voting-charts.view.Main');
         Ext.Viewport.add(app);
 
@@ -75,5 +63,4 @@ Ext.application({
                 }
             }
         }
-    }
-});
+}});

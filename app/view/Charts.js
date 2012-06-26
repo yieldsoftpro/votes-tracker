@@ -16,28 +16,30 @@ Ext.define('voting-charts.view.Charts', {
                 {
                     xtype: 'toolbar',
                     docked: 'top',
-
+                    style: {background: '#808080'},
                     items: [
                         { ui: 'back', text: 'Change Tracker ID', id: 'backButton'}
                     ]
                 },
-
                 {
                     title: 'gauge',
                     xtype: 'gauge',
-                    iconCls: 'gauge_chart'
+                    iconCls: 'gauge_chart',
+                    style: {background: '#000000'}
                 },
 
                 {
                     title: 'bar',
                     xtype: 'bar',
-                    iconCls: 'bar'
+                    iconCls: 'bar',
+                    style: {background: '#000000'}
                 },
 
                 {
                     title: 'column',
                     xtype: 'column',
-                    iconCls: 'column'
+                    iconCls: 'column',
+                    style: {background: '#000000'}
                 }
         ]
     }
